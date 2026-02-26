@@ -1,0 +1,51 @@
+---
+import { ArrowRight } from 'lucide-astro';
+---
+
+<section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
+  <!-- Background effects -->
+  <div class="absolute inset-0 z-0 pointer-events-none">
+    <div class="absolute top-1/4 -left-20 w-96 h-96 bg-electric-blue/10 blur-[120px] rounded-full"></div>
+    <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-neon-violet/10 blur-[120px] rounded-full"></div>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+      <span class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wider uppercase border border-white/20 rounded-full bg-charcoal-grey/30 backdrop-blur-md">
+        Marketing + Desarrollo Web
+      </span>
+      
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
+        Más que contenido, <br />
+        <span class="text-gradient">Estrategia Digital</span> <br />
+        de Alto Rendimiento
+      </h1>
+      
+      <p class="text-xl md:text-2xl text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">
+        Gasty Creative escala tu marca con una fusión técnica única: dominamos los algoritmos de redes sociales tanto como el código detrás de una landing de alta conversión.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#contacto" class="group relative px-8 py-4 bg-electric-blue text-black font-bold rounded-xl overflow-hidden transition-all hover:glow-blue hover:scale-105 active:scale-95">
+          <span class="flex items-center gap-2">
+            Impulsa tu Marca
+            <ArrowRight class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </span>
+        </a>
+        <a href="#portfolio" class="px-8 py-4 bg-white/5 backdrop-blur-md border border-white/10 text-white font-bold rounded-xl transition-all hover:bg-white/10">
+          Mis Trabajos
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
+    <div class="w-1 h-12 rounded-full bg-gradient-to-b from-electric-blue to-transparent"></div>
+  </div>
+</section>
+
+<style>
+  h1 {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+  }
+</style>

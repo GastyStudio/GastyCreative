@@ -1,0 +1,98 @@
+---
+import { Play, TrendingUp, Users } from 'lucide-astro';
+
+const projects = [
+  {
+    title: "Estrategia TikTok Viral",
+    client: "Tech Startup X",
+    type: "TikTok",
+    stats: "+1M Views / mes",
+    icon: Play,
+    color: "from-pink-500 to-rose-600",
+    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80&w=800",
+    description: "Calamidad en el algoritmo: Dominamos TikTok con contenido estructurado para retención máxima."
+  },
+  {
+    title: "Gestión YouTube Premium",
+    client: "Empresa SaaS",
+    type: "YouTube",
+    stats: "+25k Subs crec.",
+    icon: TrendingUp,
+    color: "from-red-500 to-orange-600",
+    image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&q=80&w=800",
+    description: "De canales olvidados a motores de leads. SEO en YouTube y Shorts de alto impacto."
+  },
+  {
+    title: "Branding Instagram 360",
+    client: "Agencia de Desarroladores",
+    type: "Instagram",
+    stats: "40% Engagement Rate",
+    icon: Users,
+    color: "from-purple-500 to-indigo-600",
+    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&q=80&w=800",
+    description: "Estética técnica y profesional. Contenido que educa y convierte seguidores en clientes."
+  }
+];
+---
+
+<section id="portfolio" class="py-24 bg-charcoal-grey/20">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row items-end justify-between mb-16 gap-4">
+      <div data-aos="fade-right">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Portfolio <span class="text-gradient">Selecto</span></h2>
+        <p class="text-white/60 text-lg max-w-xl">
+          Resultados tangibles. Cada proyecto es una lección de crecimiento acelerado y optimización técnica.
+        </p>
+      </div>
+      <div class="flex gap-2" data-aos="fade-left">
+        <button class="px-6 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-colors">Todos</button>
+        <button class="px-6 py-2 rounded-full border border-electric-blue/30 bg-electric-blue/10 text-electric-blue">Social Media</button>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project, index) => (
+        <div 
+          class="group relative overflow-hidden rounded-3xl bg-charcoal-grey border border-white/5 hover:border-electric-blue/30 transition-all duration-500 hover:-translate-y-2"
+          data-aos="fade-up"
+          data-aos-delay={index * 100}
+        >
+          <!-- Background Image -->
+          <div class="aspect-video w-full overflow-hidden relative">
+            <img 
+              src={project.image} 
+              alt={project.title}
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100"
+            />
+            <div class={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-20 transition-opacity group-hover:opacity-40`}></div>
+            
+            <div class="absolute top-4 left-4">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-xs font-bold uppercase tracking-wider">
+                <project.icon class="w-3.5 h-3.5" />
+                {project.type}
+              </span>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="p-8">
+            <div class="mb-4">
+              <h3 class="text-2xl font-bold mb-1 group-hover:text-electric-blue transition-colors">{project.title}</h3>
+              <p class="text-electric-blue/80 font-medium text-sm">{project.stats}</p>
+            </div>
+            <p class="text-white/60 mb-6 line-clamp-2">
+              {project.description}
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-white/40 text-sm font-semibold">{project.client}</span>
+              <button class="text-white hover:text-electric-blue flex items-center gap-1 font-bold text-sm group/btn">
+                Ver Detalles
+                <TrendingUp class="w-4 h-4 group-hover/btn:-translate-y-1 group-hover/btn:translate-x-1 transition-transform" />
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

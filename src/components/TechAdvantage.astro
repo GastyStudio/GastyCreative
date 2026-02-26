@@ -1,0 +1,63 @@
+---
+import { Code, Zap, Search, Layout } from 'lucide-astro';
+
+const advantages = [
+  {
+    title: "Velocidad & Rendimiento",
+    description: "No solo creamos contenido; optimizamos la carga de tus landing pages para que cada clic se convierta en una visita real. El código limpio es el mejor aliado del marketing.",
+    icon: Zap,
+    color: "bg-electric-blue/10 text-electric-blue"
+  },
+  {
+    title: "SEO Técnico Profundo",
+    description: "Entendemos cómo los bots de búsqueda y los algoritmos de redes sociales leen tu marca. Estructura semántica que posiciona tu contenido donde debe estar.",
+    icon: Search,
+    color: "bg-neon-violet/10 text-neon-violet"
+  },
+  {
+    title: "Landings de Conversión",
+    description: "Diseñamos y programamos páginas de aterrizaje personalizadas que capturan leads sin fricciones, integrando formularios directos y automatizaciones inteligentes.",
+    icon: Layout,
+    color: "bg-blue-500/10 text-blue-500"
+  },
+  {
+    title: "Soluciones a Medida",
+    description: "Si una herramienta no existe, la programamos. Desde bots de respuesta automática hasta dashboards personalizados para medir tu crecimiento real.",
+    icon: Code,
+    color: "bg-emerald-500/10 text-emerald-500"
+  }
+];
+---
+
+<section class="py-24 relative overflow-hidden bg-black-deep">
+  <div class="absolute inset-0 z-0 opacity-10">
+    <div class="absolute -top-1/4 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--color-electric-blue)_0%,_transparent_70%)] blur-3xl"></div>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
+      <h2 class="text-4xl md:text-6xl font-bold mb-6">The <span class="text-gradient">Tech Advantage</span></h2>
+      <p class="text-white/60 text-xl leading-relaxed">
+        ¿Por qué contratar un Community Manager que sabe programar? Porque el contenido sin infraestructura sólida es solo ruido. Fusionamos el arte de comunicar con la precisión del código.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {advantages.map((adv, index) => (
+        <div 
+          class="p-10 rounded-3xl bg-charcoal-grey/30 border border-white/5 backdrop-blur-xl group hover:border-electric-blue/20 transition-all duration-300"
+          data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+          data-aos-delay={index * 100}
+        >
+          <div class={`w-16 h-16 rounded-2xl ${adv.color} flex items-center justify-center mb-8 group-hover:scale-110 transition-transform`}>
+            <adv.icon class="w-8 h-8" />
+          </div>
+          <h3 class="text-2xl font-bold mb-4 group-hover:text-electric-blue transition-colors">{adv.title}</h3>
+          <p class="text-white/60 text-lg leading-relaxed">
+            {adv.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

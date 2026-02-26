@@ -1,0 +1,71 @@
+---
+import { Youtube, Instagram, Figma, CodeXml, Megaphone, BarChart3 } from 'lucide-astro';
+
+const services = [
+  {
+    title: "YouTube Strategy",
+    description: "Guionizado, edición estratégica, SEO en metadatos y gestión de Shorts para maximizar alcance orgánico.",
+    icon: Youtube,
+    delay: 100
+  },
+  {
+    title: "TikTok & Reels",
+    description: "Contenido de retención alta adaptado a las últimas tendencias y audio-branding para captar leads jóvenes.",
+    icon: Instagram,
+    delay: 200
+  },
+  {
+    title: "Web Development",
+    description: "Creación de Landing Pages ultra-rápidas enfocadas 100% en la conversión de usuarios de redes sociales.",
+    icon: CodeXml,
+    delay: 300
+  },
+  {
+    title: "UX/UI Design",
+    description: "Prototipado en Figma para experiencias digitales que no solo se ven bien, sino que guían al usuario a la compra.",
+    icon: Figma,
+    delay: 400
+  },
+  {
+    title: "Paid Media",
+    description: "Campañas de ADS con segmentación técnica basada en datos para recuperar inversión en tiempo récord.",
+    icon: Megaphone,
+    delay: 500
+  },
+  {
+    title: "Analytics & Growth",
+    description: "Reportes mensuales con datos reales (KPIs) y ajuste de estrategia basada en el comportamiento del usuario.",
+    icon: BarChart3,
+    delay: 600
+  }
+];
+---
+
+<section id="servicios" class="py-24 bg-black-deep">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">Servicios <span class="text-gradient">Especializados</span></h2>
+      <p class="text-white/60 text-lg max-w-2xl mx-auto">
+        Soluciones integrales de marketing y tecnología diseñadas para empresas que no se conforman con lo convencional.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map((service) => (
+        <div 
+          class="p-8 group rounded-3xl bg-charcoal-grey/30 border border-white/5 backdrop-blur-md transition-all duration-300 hover:border-electric-blue/40"
+          data-aos="fade-up"
+          data-aos-delay={service.delay}
+        >
+          <div class="mb-6 p-4 rounded-2xl bg-black-deep/40 w-fit group-hover:bg-electric-blue/10 transition-colors">
+            <service.icon class="w-8 h-8 text-electric-blue transition-transform group-hover:scale-110" />
+          </div>
+          <h3 class="text-2xl font-bold mb-4 group-hover:translate-x-1 transition-transform">{service.title}</h3>
+          <p class="text-white/60 text-lg leading-relaxed">
+            {service.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
