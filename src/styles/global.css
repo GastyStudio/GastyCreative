@@ -10,8 +10,13 @@
 }
 
 @layer base {
+
+  html,
   body {
     @apply bg-black-deep text-white antialiased;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
   }
 }
 
@@ -21,7 +26,7 @@
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-electric-blue to-neon-violet;
+    @apply bg-clip-text text-transparent bg-linear-to-r from-electric-blue to-neon-violet;
   }
 
   .glow-blue {
