@@ -14,10 +14,10 @@ import { Menu, X, Github, Youtube, Instagram } from 'lucide-astro';
       <div class="flex items-center gap-8 text-white/70 font-bold uppercase text-xs tracking-widest bg-charcoal-grey/40 backdrop-blur-md px-8 py-4 rounded-full border border-white/5">
         <a href="#portfolio" class="hover:text-electric-blue transition-colors">Proyectos</a>
         <a href="#servicios" class="hover:text-electric-blue transition-colors">Servicios</a>
-        <a href="https://wa.me/5491164246726" target="_blank" class="hover:text-electric-blue transition-colors">Contacto</a>
+        <a href="https://wa.me/5491164246726" target="_blank" data-astro-reload onclick="window.open(this.href, '_blank'); return false;" class="hover:text-electric-blue transition-colors">Contacto</a>
       </div>
       
-      <a href="https://wa.me/5491164246726" target="_blank" class="px-6 py-3 bg-white text-black font-bold uppercase text-xs tracking-widest rounded-full hover:bg-electric-blue hover:text-white transition-all hover:scale-105 active:scale-95 shadow-sm flex items-center gap-2">
+      <a href="https://wa.me/5491164246726" target="_blank" data-astro-reload onclick="window.open(this.href, '_blank'); return false;" class="px-6 py-3 bg-black/40 backdrop-blur-md text-white font-bold uppercase text-xs tracking-widest rounded-full hover:bg-electric-blue hover:text-black transition-all hover:scale-105 active:scale-95 shadow-sm flex items-center gap-2 border border-white/10">
         <img src="/whatsapp-favicon.png" alt="" class="w-5 h-5" />
         Start Project
       </a>
@@ -52,7 +52,7 @@ import { Menu, X, Github, Youtube, Instagram } from 'lucide-astro';
       <a href="#" class="p-3 bg-white/5 rounded-full hover:text-electric-blue transition-colors border border-white/10"><Github class="w-6 h-6" /></a>
     </div>
     
-    <a href="https://wa.me/5491164246726" target="_blank" class="w-full py-5 bg-electric-blue text-black font-bold text-xl rounded-2xl flex items-center justify-center gap-3">
+    <a href="https://wa.me/5491164246726" target="_blank" data-astro-reload onclick="window.open(this.href, '_blank'); return false;" class="w-full py-5 bg-electric-blue text-black font-bold text-xl rounded-2xl flex items-center justify-center gap-3">
       <img src="/whatsapp-favicon.png" alt="" class="w-8 h-8" />
       Hablemos ahora
     </a>
