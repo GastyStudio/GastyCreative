@@ -29,72 +29,97 @@ import { Menu, X, Github, Youtube, Instagram } from 'lucide-astro';
     </button>
   </div>
 
-  <!-- Mobile Menu Overlay -->
-  <div id="mobile-menu" class="fixed inset-0 bg-black-deep/98 backdrop-blur-2xl z-[110] translate-x-full hidden transition-all duration-500 lg:hidden flex-col items-center justify-center p-10 text-center">
-    <button class="absolute top-8 right-8 text-white" id="close-menu">
-      <X class="w-10 h-10" />
-    </button>
-    
-    <div class="flex flex-col gap-8 mb-16">
-      <a href="#portfolio" class="mobile-link text-4xl font-bold hover:text-electric-blue transition-colors">Proyectos</a>
-      <a href="#servicios" class="mobile-link text-4xl font-bold hover:text-electric-blue transition-colors">Servicios</a>
-      <a href="https://wa.me/5491164246726" target="_blank" class="mobile-link text-4xl font-bold hover:text-electric-blue transition-colors">Contacto</a>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed top-20 right-6 bg-black-deep/95 backdrop-blur-xl z-[105] rounded-2xl border border-white/10 shadow-2xl py-6 px-4 w-56 transition-all duration-300 lg:hidden" style="display: none;">
+    <div class="flex flex-col gap-4 mb-6 w-full">
+      <a href="#portfolio" class="mobile-link text-base font-bold hover:text-electric-blue transition-colors text-center py-2 px-4 rounded-lg hover:bg-white/5">Proyectos</a>
+      <a href="#servicios" class="mobile-link text-base font-bold hover:text-electric-blue transition-colors text-center py-2 px-4 rounded-lg hover:bg-white/5">Servicios</a>
+      <a href="https://wa.me/5491164246726" target="_blank" class="mobile-link text-base font-bold hover:text-electric-blue transition-colors text-center py-2 px-4 rounded-lg hover:bg-white/5">Contacto</a>
     </div>
-    
-    <div class="flex gap-6 mb-12">
-      <a href="#" class="p-3 bg-white/5 rounded-full hover:text-electric-blue transition-colors border border-white/10"><Youtube class="w-6 h-6" /></a>
-      <a href="#" class="p-3 bg-white/5 rounded-full hover:text-electric-blue transition-colors border border-white/10" title="TikTok">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
-        </svg>
+
+    <div class="border-t border-white/10 w-full pt-6">
+      <div class="flex gap-3 justify-center mb-6">
+        <a href="#" class="p-2 bg-white/5 rounded-lg hover:text-electric-blue transition-colors border border-white/10"><Youtube class="w-4 h-4" /></a>
+        <a href="#" class="p-2 bg-white/5 rounded-lg hover:text-electric-blue transition-colors border border-white/10" title="TikTok">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
+          </svg>
+        </a>
+        <a href="#" class="p-2 bg-white/5 rounded-lg hover:text-electric-blue transition-colors border border-white/10"><Instagram class="w-4 h-4" /></a>
+        <a href="#" class="p-2 bg-white/5 rounded-lg hover:text-electric-blue transition-colors border border-white/10"><Github class="w-4 h-4" /></a>
+      </div>
+
+      <a href="https://wa.me/5491164246726" target="_blank" data-astro-reload onclick="window.open(this.href, '_blank'); return false;" class="w-full py-3 bg-electric-blue text-black font-bold text-sm rounded-lg flex items-center justify-center gap-2 hover:scale-105 active:scale-95 transition-transform">
+        <img src="/whatsapp-favicon.png" alt="" class="w-5 h-5" />
+        Hablemos
       </a>
-      <a href="#" class="p-3 bg-white/5 rounded-full hover:text-electric-blue transition-colors border border-white/10"><Instagram class="w-6 h-6" /></a>
-      <a href="#" class="p-3 bg-white/5 rounded-full hover:text-electric-blue transition-colors border border-white/10"><Github class="w-6 h-6" /></a>
     </div>
-    
-    <a href="https://wa.me/5491164246726" target="_blank" data-astro-reload onclick="window.open(this.href, '_blank'); return false;" class="w-full py-5 bg-electric-blue text-black font-bold text-xl rounded-2xl flex items-center justify-center gap-3">
-      <img src="/whatsapp-favicon.png" alt="" class="w-8 h-8" />
-      Hablemos ahora
-    </a>
   </div>
 </nav>
 
-<script>
-  let lastScroll = 0;
-  const navbar = document.getElementById('navbar');
-  const menuToggle = document.getElementById('menu-toggle');
-  const closeMenu = document.getElementById('close-menu');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mobileLinks = document.querySelectorAll('.mobile-link');
+<script is:inline>
+  let mobileMenuInitialized = false;
 
-  // Logic for the navbar appearance on scroll
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    if (currentScroll > 100) {
-      navbar?.classList.add('bg-black-deep/80', 'backdrop-blur-xl', 'border-b', 'border-white/5', 'py-4');
-      navbar?.classList.remove('py-6');
-    } else {
-      navbar?.classList.remove('bg-black-deep/80', 'backdrop-blur-xl', 'border-b', 'border-white/5', 'py-4');
-      navbar?.classList.add('py-6');
-    }
-    lastScroll = currentScroll;
-  });
+  function initMobileMenu() {
+    if (mobileMenuInitialized) return;
+    mobileMenuInitialized = true;
 
-  // Mobile menu logic
-  menuToggle?.addEventListener('click', () => {
-    mobileMenu?.classList.remove('translate-x-full', 'hidden');
-    mobileMenu?.classList.add('flex');
-  });
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
 
-  closeMenu?.addEventListener('click', () => {
-    mobileMenu?.classList.replace('flex', 'hidden');
-    mobileMenu?.classList.add('translate-x-full');
-  });
+    if (!menuToggle || !mobileMenu) return;
 
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu?.classList.replace('flex', 'hidden');
-      mobileMenu?.classList.add('translate-x-full');
+    // Mobile menu toggle
+    menuToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const isVisible = mobileMenu.style.display === 'block';
+      mobileMenu.style.display = isVisible ? 'none' : 'block';
     });
-  });
+
+    // Close menu when clicking on links
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        mobileMenu.style.display = 'none';
+      });
+    });
+
+    // Close menu when clicking outside (only added once)
+    document.addEventListener('click', function(e) {
+      if (mobileMenu && menuToggle && !mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+        mobileMenu.style.display = 'none';
+      }
+    }, { once: false });
+  }
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMobileMenu);
+  } else {
+    initMobileMenu();
+  }
+
+  // Scroll effect on navbar (separate, non-interfering)
+  function initNavbarScroll() {
+    const navbar = document.getElementById('navbar');
+    if (!navbar) return;
+
+    window.addEventListener('scroll', function() {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > 100) {
+        navbar.classList.add('bg-black-deep/80', 'backdrop-blur-xl', 'border-b', 'border-white/5', 'py-4');
+        navbar.classList.remove('py-6');
+      } else {
+        navbar.classList.remove('bg-black-deep/80', 'backdrop-blur-xl', 'border-b', 'border-white/5', 'py-4');
+        navbar.classList.add('py-6');
+      }
+    }, { passive: true });
+  }
+
+  // Initialize scroll effect when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNavbarScroll);
+  } else {
+    initNavbarScroll();
+  }
 </script>

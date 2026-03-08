@@ -1,42 +1,24 @@
 ---
-import { Youtube, Instagram, Figma, CodeXml, Megaphone, BarChart3 } from 'lucide-astro';
+import { Users, Video, Zap } from 'lucide-astro';
 
 const services = [
   {
-    title: "YouTube Strategy",
-    description: "Guionizado, edición estratégica, SEO en metadatos y gestión de Shorts para maximizar alcance orgánico.",
-    icon: Youtube,
+    title: "Community Manager",
+    description: "Gestión integral de redes sociales: calendario editorial, creación de contenido, respuesta a comunidad y reporte mensual de métricas reales.",
+    icon: Users,
     delay: 100
   },
   {
-    title: "TikTok & Reels",
-    description: "Contenido de retención alta adaptado a las últimas tendencias y audio-branding para captar leads jóvenes.",
-    icon: Instagram,
+    title: "Creación de Contenido (TikTok & Reels)",
+    description: "Guión, grabación, edición y publicación de videos optimizados para retención y alcance orgánico en TikTok e Instagram Reels.",
+    icon: Video,
     delay: 200
   },
   {
-    title: "Web Development",
-    description: "Creación de Landing Pages ultra-rápidas enfocadas 100% en la conversión de usuarios de redes sociales.",
-    icon: CodeXml,
+    title: "Estrategia de Redes Sociales",
+    description: "Auditoría de tu perfil actual, definición de tono de marca, plan de contenido mensual y acompañamiento en la ejecución.",
+    icon: Zap,
     delay: 300
-  },
-  {
-    title: "UX/UI Design",
-    description: "Prototipado en Figma para experiencias digitales que no solo se ven bien, sino que guían al usuario a la compra.",
-    icon: Figma,
-    delay: 400
-  },
-  {
-    title: "Paid Media",
-    description: "Campañas de ADS con segmentación técnica basada en datos para recuperar inversión en tiempo récord.",
-    icon: Megaphone,
-    delay: 500
-  },
-  {
-    title: "Analytics & Growth",
-    description: "Reportes mensuales con datos reales (KPIs) y ajuste de estrategia basada en el comportamiento del usuario.",
-    icon: BarChart3,
-    delay: 600
   }
 ];
 ---
@@ -52,7 +34,7 @@ const services = [
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {services.map((service) => (
-        <div 
+        <div
           class="p-8 group rounded-3xl bg-charcoal-grey/30 border border-white/5 backdrop-blur-md transition-all duration-300 hover:border-electric-blue/40"
           data-aos="fade-up"
           data-aos-delay={service.delay}
@@ -66,6 +48,30 @@ const services = [
           </p>
         </div>
       ))}
+    </div>
+
+    <!-- CTA Section -->
+    <div class="mt-20 pt-20 border-t border-white/10" data-aos="fade-up">
+      <div class="max-w-2xl mx-auto text-center">
+        <h3 class="text-3xl md:text-4xl font-bold mb-6">
+          Cada proyecto es distinto
+        </h3>
+        <p class="text-white/70 text-xl mb-8 leading-relaxed">
+          No hay soluciones genéricas. Hablemos de tu proyecto específico y armamos algo hecho a medida para tus objetivos.
+        </p>
+        <a
+          href="https://wa.me/5491164246726"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-2 px-8 py-4 bg-electric-blue text-black font-bold rounded-xl hover:glow-blue hover:scale-105 active:scale-95 transition-all"
+        >
+          Hablemos por WhatsApp
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3 .97 4.29L2 22l6.29-.99C9.95 22.6 11.46 23 12 23c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.41 0-2.73-.35-3.88-.97l-.28-.15-2.89.46.47-2.83-.15-.24C4.5 14.69 4 13.42 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/>
+            <path d="M16.65 12.8c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.23-.64.81-.78.97-.13.15-.27.17-.52.05-.25-.12-1.06-.39-2.02-1.24-.75-.68-1.26-1.52-1.4-1.77-.14-.25-.02-.38.1-.51.1-.1.23-.27.35-.4.12-.13.16-.22.25-.36.08-.15.04-.27-.02-.38-.06-.11-.56-1.35-.77-1.84-.2-.47-.4-.41-.56-.41-.14 0-.29-.02-.44-.02-.15 0-.39.06-.6.27-.21.22-.8.78-.8 1.91s.82 2.21.94 2.36c.12.15 1.68 2.59 4.08 3.61.57.24 1.01.38 1.36.49.57.18 1.09.15 1.5.09.46-.07 1.41-.57 1.61-1.13.2-.56.2-1.04.14-1.13-.06-.09-.22-.14-.47-.25z"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
 </section>

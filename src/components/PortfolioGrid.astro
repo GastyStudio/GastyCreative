@@ -3,34 +3,37 @@ import { Play, TrendingUp, Users } from 'lucide-astro';
 
 const projects = [
   {
-    title: "Estrategia TikTok Viral",
-    client: "Tech Startup X",
-    type: "TikTok",
-    stats: "+1M Views / mes",
+    title: "Marca Personal @gastycoriaok",
+    client: "Mi Laboratorio de Pruebas",
+    type: "Social Media",
+    stats: "Estrategia en Vivo",
     icon: Play,
     color: "from-pink-500 to-rose-600",
     image: "/tik tok.jpg",
-    description: "Calamidad en el algoritmo: Dominamos TikTok con contenido estructurado para retención máxima."
+    description: "Mi propia marca como campo de pruebas. Desarrollo y testeo estrategias de contenido fitness en tiempo real, desde la idea hasta la publicación y el análisis de resultados.",
+    link: "https://www.tiktok.com/@gastycoria.ok?is_from_webapp=1&sender_device=pc"
   },
   {
-    title: "Gestión YouTube Premium",
-    client: "Empresa SaaS",
-    type: "YouTube",
-    stats: "+25k Subs crec.",
+    title: "Web para Negocios Fitness",
+    client: "Web Development",
+    type: "Landing Page",
+    stats: "En Vivo",
     icon: TrendingUp,
-    color: "from-red-500 to-orange-600",
-    image: "/youtube.jpg",
-    description: "De canales olvidados a motores de leads. SEO en YouTube y Shorts de alto impacto."
+    color: "from-blue-500 to-cyan-600",
+    image: "/logo.png",
+    description: "Diseño y desarrollo de landing pages para gimnasios y entrenadores personales. Enfoque 100% en conversión y experiencia de usuario.",
+    link: "https://gasty-fit-landing.vercel.app/"
   },
   {
-    title: "Branding Instagram 360",
-    client: "Agencia de Desarroladores",
-    type: "Instagram",
-    stats: "40% Engagement Rate",
+    title: "Próximo Caso de Estudio",
+    client: "En Construcción",
+    type: "Pronto",
+    stats: "Confidencial",
     icon: Users,
     color: "from-purple-500 to-indigo-600",
     image: "/imagen-instagram.jpg",
-    description: "Estética técnica y profesional. Contenido que educa y convierte seguidores en clientes."
+    description: "Trabajando en un nuevo proyecto que pronto podré compartir. Aplicando estrategia y tecnología para generar resultados reales.",
+    link: null
   }
 ];
 ---
@@ -85,10 +88,16 @@ const projects = [
             </p>
             <div class="flex items-center justify-between">
               <span class="text-white/40 text-sm font-semibold">{project.client}</span>
-              <button class="text-white hover:text-electric-blue flex items-center gap-1 font-bold text-sm group/btn">
-                Ver Detalles
-                <TrendingUp class="w-4 h-4 group-hover/btn:-translate-y-1 group-hover/btn:translate-x-1 transition-transform" />
-              </button>
+              {project.link ? (
+                <a href={project.link} target="_blank" rel="noopener" class="text-white hover:text-electric-blue flex items-center gap-1 font-bold text-sm group/btn">
+                  Ver Más
+                  <TrendingUp class="w-4 h-4 group-hover/btn:-translate-y-1 group-hover/btn:translate-x-1 transition-transform" />
+                </a>
+              ) : (
+                <span class="text-white/30 flex items-center gap-1 font-bold text-sm">
+                  Pronto
+                </span>
+              )}
             </div>
           </div>
         </div>

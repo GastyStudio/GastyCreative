@@ -1,7 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
+import Intro from '../components/Intro.astro';
 import Hero from '../components/Hero.astro';
+import AboutMe from '../components/AboutMe.astro';
 import PortfolioGrid from '../components/PortfolioGrid.astro';
 import TechAdvantage from '../components/TechAdvantage.astro';
 import CaseStudy from '../components/CaseStudy.astro';
@@ -10,9 +12,11 @@ import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Gasty Creative | Estrategia Digital de Alto Rendimiento">
+	<Intro />
 	<Navbar />
 	<main>
 		<Hero />
+		<AboutMe />
 		<PortfolioGrid />
 		<TechAdvantage />
 		<CaseStudy />
