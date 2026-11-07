@@ -1,10 +1,10 @@
-# Gasty Creative - High-Impact Digital Agency Portfolio
+# Gasty Creative — Webs, apps y Google Ads para negocios
 
-Esta es una web de portafolio de alto rendimiento diseñada para **Gasty Creative** (Gasty Community), enfocada en empresas de tecnología, startups y clientes premium.
+Sitio de **Gasty Creative**: desarrollo de páginas web, apps a medida, Google Ads y automatizaciones con IA para negocios de zona sur y GBA.
 
 ## 🚀 Stack Tecnológico
 
-- **Framework:** [Astro 4.x](https://astro.build/) - Máximo rendimiento y SEO.
+- **Framework:** [Astro 5](https://astro.build/) - Máximo rendimiento y SEO.
 - **Styling:** [Tailwind CSS 4](https://tailwindcss.com/) - Diseño moderno y escalable.
 - **Animaciones:** [AOS (Animate On Scroll)](https://michalsnik.github.io/aos/) & CSS Nativo.
 - **Iconografía:** [Lucide Astro](https://lucide.dev/) - Iconos minimalistas y técnicos.

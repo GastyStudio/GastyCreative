@@ -1,77 +1,84 @@
 ---
-import { Users, Video, Zap } from 'lucide-astro';
+import { LayoutTemplate, Globe, Smartphone, TrendingUp, Bot, Check } from 'lucide-astro';
+import { waLink } from '../data/site.js';
 
 const services = [
   {
-    title: "Community Manager",
-    description: "Gestión integral de redes sociales: calendario editorial, creación de contenido, respuesta a comunidad y reporte mensual de métricas reales.",
-    icon: Users,
-    delay: 100
+    title: 'Landing page',
+    description: 'Una sola página enfocada en que te escriban. Ideal para arrancar o para campañas de Google Ads.',
+    points: ['Botón directo a WhatsApp', 'Rápida y pensada para celular', 'Lista para medir consultas'],
+    icon: LayoutTemplate,
   },
   {
-    title: "Creación de Contenido (TikTok & Reels)",
-    description: "Guión, grabación, edición y publicación de videos optimizados para retención y alcance orgánico en TikTok e Instagram Reels.",
-    icon: Video,
-    delay: 200
+    title: 'Sitio web completo',
+    description: 'Varias secciones para mostrar todo lo que hacés y generar confianza antes del primer contacto.',
+    points: ['Servicios, trabajos y zonas', 'Preparado para aparecer en Google', 'Dominio .com.ar y hosting configurados'],
+    icon: Globe,
   },
   {
-    title: "Estrategia de Redes Sociales",
-    description: "Auditoría de tu perfil actual, definición de tono de marca, plan de contenido mensual y acompañamiento en la ejecución.",
-    icon: Zap,
-    delay: 300
-  }
+    title: 'App web a medida',
+    description: 'Cuando una planilla o un cuaderno ya no alcanzan: una herramienta hecha para tu forma de trabajar.',
+    points: ['Turnos, reservas, catálogos o gestión de clientes', 'Funciona en celular y en la compu', 'Panel para administrar vos mismo'],
+    icon: Smartphone,
+  },
+  {
+    title: 'Campañas de Google Ads',
+    description: 'Aparecé cuando alguien de tu zona busca lo que ofrecés, con la página preparada para convertir esa visita.',
+    points: ['Segmentación por zona y servicio', 'Medición de clics a WhatsApp y llamadas', 'Informes claros, sin vueltas'],
+    icon: TrendingUp,
+  },
+  {
+    title: 'Automatización con IA',
+    description: 'Menos tiempo contestando lo mismo. Respuestas, turnos y seguimiento que funcionan aunque estés trabajando.',
+    points: ['Respuestas automáticas a preguntas frecuentes', 'Toma de turnos y datos del cliente', 'Conectado a tu web y WhatsApp'],
+    icon: Bot,
+  },
 ];
 ---
 
 <section id="servicios" class="py-24 bg-black-deep">
   <div class="container mx-auto px-6">
-    <div class="text-center mb-16" data-aos="fade-up">
-      <h2 class="text-3xl md:text-5xl font-bold mb-4">Servicios <span class="text-gradient">Especializados</span></h2>
-      <p class="text-white/60 text-lg max-w-2xl mx-auto">
-        Soluciones integrales de marketing y tecnología diseñadas para empresas que no se conforman con lo convencional.
+    <div class="text-center mb-16 max-w-2xl mx-auto" data-aos="fade-up">
+      <span class="text-electric-blue font-bold tracking-widest uppercase text-sm block mb-4">Servicios</span>
+      <h2 class="text-3xl md:text-5xl font-bold mb-4">Lo que puedo <span class="text-gradient">hacer por tu negocio</span></h2>
+      <p class="text-white/60 text-lg">
+        Podés arrancar con una landing y sumar el resto cuando lo necesites.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {services.map((service) => (
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {services.map((s, i) => (
         <div
-          class="p-8 group rounded-3xl bg-charcoal-grey/30 border border-white/5 backdrop-blur-md transition-all duration-300 hover:border-electric-blue/40"
+          class="p-8 group rounded-3xl bg-charcoal-grey/30 border border-white/5 backdrop-blur-md transition-all duration-300 hover:border-electric-blue/40 flex flex-col"
           data-aos="fade-up"
-          data-aos-delay={service.delay}
+          data-aos-delay={(i % 3) * 100}
         >
-          <div class="mb-6 p-4 rounded-2xl bg-black-deep/40 w-fit group-hover:bg-electric-blue/10 transition-colors">
-            <service.icon class="w-8 h-8 text-electric-blue transition-transform group-hover:scale-110" />
+          <div class="mb-6 p-4 rounded-2xl bg-electric-blue/10 w-fit">
+            <s.icon class="w-7 h-7 text-electric-blue" />
           </div>
-          <h3 class="text-2xl font-bold mb-4 group-hover:translate-x-1 transition-transform">{service.title}</h3>
-          <p class="text-white/60 text-lg leading-relaxed">
-            {service.description}
-          </p>
+          <h3 class="text-2xl font-bold mb-3">{s.title}</h3>
+          <p class="text-white/60 leading-relaxed mb-6">{s.description}</p>
+          <ul class="space-y-2 mt-auto">
+            {s.points.map((pt) => (
+              <li class="flex items-start gap-2 text-white/80 text-sm"><Check class="w-4 h-4 mt-0.5 text-electric-blue shrink-0" />{pt}</li>
+            ))}
+          </ul>
         </div>
       ))}
-    </div>
 
-    <!-- CTA Section -->
-    <div class="mt-20 pt-20 border-t border-white/10" data-aos="fade-up">
-      <div class="max-w-2xl mx-auto text-center">
-        <h3 class="text-3xl md:text-4xl font-bold mb-6">
-          Cada proyecto es distinto
-        </h3>
-        <p class="text-white/70 text-xl mb-8 leading-relaxed">
-          No hay soluciones genéricas. Hablemos de tu proyecto específico y armamos algo hecho a medida para tus objetivos.
-        </p>
-        <a
-          href="https://wa.me/5491164246726"
-          target="_blank"
-          rel="noopener"
-          class="inline-flex items-center gap-2 px-8 py-4 bg-electric-blue text-black font-bold rounded-xl hover:glow-blue hover:scale-105 active:scale-95 transition-all"
-        >
-          Hablemos por WhatsApp
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3 .97 4.29L2 22l6.29-.99C9.95 22.6 11.46 23 12 23c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.41 0-2.73-.35-3.88-.97l-.28-.15-2.89.46.47-2.83-.15-.24C4.5 14.69 4 13.42 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/>
-            <path d="M16.65 12.8c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.23-.64.81-.78.97-.13.15-.27.17-.52.05-.25-.12-1.06-.39-2.02-1.24-.75-.68-1.26-1.52-1.4-1.77-.14-.25-.02-.38.1-.51.1-.1.23-.27.35-.4.12-.13.16-.22.25-.36.08-.15.04-.27-.02-.38-.06-.11-.56-1.35-.77-1.84-.2-.47-.4-.41-.56-.41-.14 0-.29-.02-.44-.02-.15 0-.39.06-.6.27-.21.22-.8.78-.8 1.91s.82 2.21.94 2.36c.12.15 1.68 2.59 4.08 3.61.57.24 1.01.38 1.36.49.57.18 1.09.15 1.5.09.46-.07 1.41-.57 1.61-1.13.2-.56.2-1.04.14-1.13-.06-.09-.22-.14-.47-.25z"/>
-          </svg>
-        </a>
-      </div>
+      <a
+        href={waLink('Hola Gastón, no sé bien qué necesito para mi negocio, ¿me asesorás?')}
+        target="_blank"
+        rel="noopener"
+        data-astro-reload
+        class="p-8 rounded-3xl border border-dashed border-electric-blue/40 bg-gradient-to-br from-electric-blue/10 to-neon-violet/10 flex flex-col justify-center hover:scale-[1.02] transition-transform"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <h3 class="text-2xl font-bold mb-3">¿No sabés qué necesitás?</h3>
+        <p class="text-white/70 leading-relaxed mb-6">Contame qué hace tu negocio y te digo qué te conviene, aunque la respuesta sea “todavía nada”.</p>
+        <span class="font-bold text-electric-blue">Escribime por WhatsApp →</span>
+      </a>
     </div>
   </div>
 </section>

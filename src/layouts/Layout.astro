@@ -7,7 +7,10 @@ interface Props {
 	description?: string;
 }
 
-const { title, description = "Gasty Creative - Estrategia Digital de Alto Rendimiento. Fusión de Marketing y Desarrollo Web." } = Astro.props;
+const {
+	title,
+	description = 'Gasty Creative: diseño y desarrollo de páginas web, apps a medida, Google Ads y automatizaciones con IA para negocios de zona sur y GBA.',
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -15,25 +18,32 @@ const { title, description = "Gasty Creative - Estrategia Digital de Alto Rendim
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="icon" type="image/png" href="/g-mark.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="/trabajos/plomeria.webp" />
+		<meta name="theme-color" content="#0a0a0a" />
 		<ViewTransitions />
-		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 	</head>
 	<body class="bg-[#0a0a0a] text-white selection:bg-[#00d4ff] selection:text-black">
 		<slot />
-		
+
 		<script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
 		<script is:inline>
+			// Si la librería de animaciones no carga, el contenido igual se muestra.
 			document.addEventListener('astro:page-load', () => {
-				AOS.init({
-					duration: 800,
-					once: false,
-					mirror: true,
-				});
+				if (window.AOS) {
+					AOS.init({ duration: 700, once: true, offset: 60 });
+				} else {
+					document.querySelectorAll('[data-aos]').forEach((el) => el.removeAttribute('data-aos'));
+				}
 			});
 		</script>
 	</body>
@@ -47,6 +57,7 @@ const { title, description = "Gasty Creative - Estrategia Digital de Alto Rendim
 	html {
 		font-family: 'Outfit', sans-serif;
 		scroll-behavior: smooth;
+		scroll-padding-top: 90px;
 	}
 	body {
 		overflow-x: hidden;

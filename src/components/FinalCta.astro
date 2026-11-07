@@ -1,0 +1,24 @@
+---
+import { waLink } from '../data/site.js';
+---
+
+<section class="py-24 bg-charcoal-grey/20">
+  <div class="container mx-auto px-6">
+    <div class="max-w-3xl mx-auto text-center p-10 md:p-16 rounded-[40px] border border-white/10 bg-gradient-to-br from-electric-blue/10 via-transparent to-neon-violet/10" data-aos="fade-up">
+      <h2 class="text-3xl md:text-5xl font-bold mb-6">¿Querés que tu negocio <span class="text-gradient">reciba más consultas?</span></h2>
+      <p class="text-white/70 text-lg md:text-xl mb-10 leading-relaxed">
+        Escribime contándome qué hacés y te respondo con una propuesta. El presupuesto no tiene costo.
+      </p>
+      <a
+        href={waLink()}
+        target="_blank"
+        rel="noopener"
+        data-astro-reload
+        class="inline-flex items-center gap-3 px-8 py-4 bg-electric-blue text-black font-bold rounded-xl hover:glow-blue hover:scale-105 active:scale-95 transition-all"
+      >
+        <img src="/whatsapp-favicon.png" alt="" class="w-6 h-6" />
+        Hablemos por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>

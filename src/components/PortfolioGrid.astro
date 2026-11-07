@@ -1,107 +1,123 @@
 ---
-import { Play, TrendingUp, Users } from 'lucide-astro';
+import { ArrowUpRight } from 'lucide-astro';
 
+// Trabajos publicados. Para sumar uno: captura 1280x800 en /public/trabajos y un objeto acá.
 const projects = [
   {
-    title: "Marca Personal @gastycoriaok",
-    client: "Mi Laboratorio de Pruebas",
-    type: "Social Media",
-    stats: "Estrategia en Vivo",
-    icon: Play,
-    color: "from-pink-500 to-rose-600",
-    image: "/tik tok.jpg",
-    description: "Mi propia marca como campo de pruebas. Desarrollo y testeo estrategias de contenido fitness en tiempo real, desde la idea hasta la publicación y el análisis de resultados.",
-    link: "https://www.tiktok.com/@gastycoria.ok?is_from_webapp=1&sender_device=pc"
+    client: 'Fernando Plomería',
+    sector: 'Plomería · CABA y GBA',
+    type: 'Sitio web',
+    image: '/trabajos/plomeria.webp',
+    description: 'Sitio para un plomero matriculado: servicios, zonas de cobertura y un botón de urgencias que abre WhatsApp con un toque.',
+    url: 'https://plomeria24hs.com.ar',
+    domain: 'plomeria24hs.com.ar',
   },
   {
-    title: "Web para Negocios Fitness",
-    client: "Web Development",
-    type: "Landing Page",
-    stats: "En Vivo",
-    icon: TrendingUp,
-    color: "from-blue-500 to-cyan-600",
-    image: "/logo.png",
-    description: "Diseño y desarrollo de landing pages para gimnasios y entrenadores personales. Enfoque 100% en conversión y experiencia de usuario.",
-    link: "https://gasty-fit-landing.vercel.app/"
+    client: 'Fernando Piscinas',
+    sector: 'Piscinas · Zona sur',
+    type: 'Landing page',
+    image: '/trabajos/alma.webp',
+    description: 'Landing de mantenimiento y reparación de piletas, armada para recibir pedidos de presupuesto por WhatsApp y campañas de Google Ads.',
+    url: 'https://www.fernandopiscinas.com.ar',
+    domain: 'fernandopiscinas.com.ar',
   },
   {
-    title: "Próximo Caso de Estudio",
-    client: "En Construcción",
-    type: "Pronto",
-    stats: "Confidencial",
-    icon: Users,
-    color: "from-purple-500 to-indigo-600",
-    image: "/imagen-instagram.jpg",
-    description: "Trabajando en un nuevo proyecto que pronto podré compartir. Aplicando estrategia y tecnología para generar resultados reales.",
-    link: null
-  }
+    client: 'FER CLEAN',
+    sector: 'Limpieza exterior',
+    type: 'Landing page',
+    image: '/trabajos/ferclean.webp',
+    description: 'Limpieza de tejados, fachadas y veredas con hidrolavadora. Página enfocada en mostrar resultados y llevar a la consulta.',
+    url: 'https://ferclean.com.ar',
+    domain: 'ferclean.com.ar',
+  },
+  {
+    client: 'NOVA Iglesia',
+    sector: 'Comunidad · Banfield',
+    type: 'Sitio web',
+    image: '/trabajos/nova.webp',
+    description: 'Sitio de varias secciones en Next.js, con un recorrido para quien visita por primera vez y captación de datos desde Instagram.',
+    url: 'https://nova-iglesia.vercel.app',
+    domain: 'nova-iglesia.vercel.app',
+  },
+  {
+    client: 'Cerámicas P.A.H.M.A.',
+    sector: 'Revestimientos',
+    type: 'App web',
+    image: '/trabajos/pahama.webp',
+    description: 'Catálogo online de cerámicas y porcelanatos, hecho en React, con pedido de presupuesto directo.',
+    url: 'https://ceramicas-web-pahma.vercel.app',
+    domain: 'ceramicas-web-pahma.vercel.app',
+  },
+  {
+    client: 'Barbero Express',
+    sector: 'Barbería a domicilio',
+    type: 'Landing page',
+    image: '/trabajos/barbero.webp',
+    description: 'Landing para un barbero que trabaja a domicilio en zona sur: servicios, cursos y reserva de turnos.',
+    url: 'https://barbero-express.vercel.app',
+    domain: 'barbero-express.vercel.app',
+  },
+];
+
+const apps = [
+  { name: 'Fútbol Fácil', description: 'App para organizar partidos con amigos en segundos.', url: 'https://futbol-facil.vercel.app' },
+  { name: 'Bio Hacker', description: 'App para medir y seguir el rendimiento físico.', url: 'https://bio-hacker-app.vercel.app' },
 ];
 ---
 
-<section id="portfolio" class="py-24 bg-charcoal-grey/20 overflow-hidden">
+<section id="trabajos" class="py-24 bg-charcoal-grey/20">
   <div class="container mx-auto px-6">
-    <div class="flex flex-col md:flex-row items-end justify-between mb-16 gap-4">
-      <div data-aos="fade-right">
-        <h2 class="text-3xl md:text-5xl font-bold mb-4">Portfolio <span class="text-gradient">Selecto</span></h2>
-        <p class="text-white/60 text-lg max-w-xl">
-          Resultados tangibles. Cada proyecto es una lección de crecimiento acelerado y optimización técnica.
-        </p>
-      </div>
-      <div class="flex flex-wrap gap-2" data-aos="fade-left">
-        <button class="px-6 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-colors whitespace-nowrap">Todos</button>
-        <button class="px-6 py-2 rounded-full border border-electric-blue/30 bg-electric-blue/10 text-electric-blue whitespace-nowrap">Social Media</button>
-      </div>
+    <div class="mb-14 max-w-2xl" data-aos="fade-up">
+      <span class="text-electric-blue font-bold tracking-widest uppercase text-sm block mb-4">Trabajos</span>
+      <h2 class="text-3xl md:text-5xl font-bold mb-4">Negocios reales, <span class="text-gradient">webs funcionando</span></h2>
+      <p class="text-white/60 text-lg">
+        Todos están publicados y en uso. Entrá y probalos desde tu celular.
+      </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {projects.map((project, index) => (
-        <div 
-          class="group relative overflow-hidden rounded-3xl bg-charcoal-grey border border-white/5 hover:border-electric-blue/30 transition-all duration-500 hover:-translate-y-2"
+      {projects.map((p, i) => (
+        <a
+          href={p.url}
+          target="_blank"
+          rel="noopener"
+          class="group flex flex-col overflow-hidden rounded-3xl bg-charcoal-grey border border-white/5 hover:border-electric-blue/40 transition-all duration-300 hover:-translate-y-1.5"
           data-aos="fade-up"
-          data-aos-delay={index * 100}
+          data-aos-delay={(i % 3) * 100}
         >
-          <!-- Background Image -->
-          <div class="aspect-video w-full overflow-hidden relative">
-            <img 
-              src={project.image} 
-              alt={project.title}
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100"
-            />
-            <div class={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-20 transition-opacity group-hover:opacity-40`}></div>
-            
-            <div class="absolute top-4 left-4">
-              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-xs font-bold uppercase tracking-wider">
-                <project.icon class="w-3.5 h-3.5" />
-                {project.type}
-              </span>
-            </div>
+          <div class="aspect-[16/10] overflow-hidden relative bg-black">
+            <img src={p.image} alt={`Página web de ${p.client}`} loading="lazy" width="1280" height="800" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-xs font-bold uppercase tracking-wider">
+              {p.type}
+            </span>
           </div>
-
-          <!-- Content -->
-          <div class="p-8">
-            <div class="mb-4">
-              <h3 class="text-2xl font-bold mb-1 group-hover:text-electric-blue transition-colors">{project.title}</h3>
-              <p class="text-electric-blue/80 font-medium text-sm">{project.stats}</p>
-            </div>
-            <p class="text-white/60 mb-6 line-clamp-2">
-              {project.description}
-            </p>
-            <div class="flex items-center justify-between">
-              <span class="text-white/40 text-sm font-semibold">{project.client}</span>
-              {project.link ? (
-                <a href={project.link} target="_blank" rel="noopener" class="text-white hover:text-electric-blue flex items-center gap-1 font-bold text-sm group/btn">
-                  Ver Más
-                  <TrendingUp class="w-4 h-4 group-hover/btn:-translate-y-1 group-hover/btn:translate-x-1 transition-transform" />
-                </a>
-              ) : (
-                <span class="text-white/30 flex items-center gap-1 font-bold text-sm">
-                  Pronto
-                </span>
-              )}
-            </div>
+          <div class="p-7 flex flex-col flex-1">
+            <p class="text-electric-blue/80 text-sm font-semibold mb-1">{p.sector}</p>
+            <h3 class="text-2xl font-bold mb-3">{p.client}</h3>
+            <p class="text-white/60 mb-6 flex-1">{p.description}</p>
+            <span class="flex items-center justify-between text-sm font-semibold text-white/50 group-hover:text-electric-blue transition-colors">
+              {p.domain}
+              <ArrowUpRight class="w-5 h-5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
+            </span>
           </div>
-        </div>
+        </a>
       ))}
+    </div>
+
+    <div class="mt-14 p-8 rounded-3xl border border-white/10 bg-black-deep/40" data-aos="fade-up">
+      <h3 class="text-xl font-bold mb-2">También desarrollo apps</h3>
+      <p class="text-white/60 mb-6">Proyectos propios donde pruebo herramientas que después aplico en clientes.</p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {apps.map((a) => (
+          <a href={a.url} target="_blank" rel="noopener" class="group flex items-center justify-between gap-4 p-5 rounded-2xl bg-charcoal-grey/60 border border-white/5 hover:border-neon-violet/40 transition-colors">
+            <div>
+              <p class="font-bold">{a.name}</p>
+              <p class="text-white/50 text-sm">{a.description}</p>
+            </div>
+            <ArrowUpRight class="w-5 h-5 shrink-0 text-white/40 group-hover:text-neon-violet transition-colors" />
+          </a>
+        ))}
+      </div>
     </div>
   </div>
 </section>
